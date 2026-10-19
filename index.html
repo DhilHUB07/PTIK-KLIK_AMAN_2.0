@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Kenali pola URL yang mengecoh sebelum membuka link. Prototipe edukasi keamanan digital Kelompok 3 PTIK.">
+  <meta name="theme-color" content="#18221e">
+  <meta name="referrer" content="no-referrer">
+  <title>Klik Aman — Periksa sebelum klik</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23d6f268'/%3E%3Cpath d='M20 7l11 4v9c0 7-11 13-11 13S9 27 9 20v-9z' fill='none' stroke='%2318221e' stroke-width='2.5'/%3E%3Cpath d='m14 20 4 4 8-9' fill='none' stroke='%2318221e' stroke-width='2.5'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="engine.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Langsung ke isi halaman</a>
+  <svg class="icon-defs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6z"/><path d="m8 12 3 3 5-6"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 6v15M3 4c4-1 7 0 9 2 2-2 5-3 9-2v15c-4-1-7 0-9 2-2-2-5-3-9-2z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M20 12H4m6-6-6 6 6 6"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-11v1"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="m9 15 6-6m-7 9-1 1a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0m2 2a4 4 0 0 1 0-6l4-4a4 4 0 0 1 6 6l-1 1" transform="translate(1 1) scale(.9)"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 3 10 18H2z"/><path d="M12 9v5m0 3v.1"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.6 6.4L21 12l-6.4 2.6L12 21l-2.6-6.4L3 12l6.4-2.6z"/></symbol>
+  </svg>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#/periksa" aria-label="Klik Aman, halaman pemeriksaan"><span class="brand-symbol"><svg class="icon"><use href="#i-shield"/></svg></span><span>Klik<span class="brand-light">Aman</span><small>JEDA SEBELUM KLIK.</small></span></a>
+      <span class="nav-caption">RUANG KEAMANAN</span>
+      <nav class="navigation" aria-label="Navigasi utama">
+        <a class="nav-link active" href="#/periksa" data-nav="periksa" aria-current="page"><svg class="icon"><use href="#i-search"/></svg><span>Periksa URL</span><span class="nav-dot"></span></a>
+        <a class="nav-link" href="#/contoh" data-nav="contoh"><svg class="icon"><use href="#i-grid"/></svg><span>Contoh Link</span><span class="nav-count">24</span></a>
+        <a class="nav-link" href="#/panduan" data-nav="panduan"><svg class="icon"><use href="#i-book"/></svg><span>Panduan Aman</span></a>
+        <a class="nav-link" href="#/tentang" data-nav="tentang"><svg class="icon"><use href="#i-info"/></svg><span>Tentang</span></a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-tip"><svg class="icon"><use href="#i-spark"/></svg><p>Satu jeda kecil.<br><strong>Keputusan lebih sadar.</strong></p><a href="#/panduan">Mulai belajar <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+        <div class="team"><span class="team-avatar">03</span><div><strong>Kelompok 3</strong><span>PTIK · Informatika UNIB</span></div></div>
+      </div>
+    </aside>
+    <div class="main-shell">
+      <header class="topbar">
+        <div class="breadcrumb"><span class="mobile-wordmark">KlikAman</span><span class="desktop-wordmark">Ruang kerja</span><span class="crumb-separator">/</span><strong id="breadcrumb-current">Periksa URL</strong></div>
+        <div class="topbar-right"><span class="local-status"><span></span>Analisis lokal</span><span class="prototype-tag">PROTOTIPE</span></div>
+      </header>
+      <main id="main" class="page-area" tabindex="-1">
+        <section class="page" id="page-periksa" data-page="periksa" aria-labelledby="heading-periksa">
+          <div class="page-intro"><div><span class="eyebrow">JANGAN TERBURU-BURU MEMBUKA LINK</span><h1 id="heading-periksa" tabindex="-1">Jangan asal klik. Periksa dulu.</h1><p>Kenali alamat tujuannya sebelum kamu mengambil langkah berikutnya.</p></div><span class="intro-symbol" aria-hidden="true"><svg class="icon"><use href="#i-shield"/></svg></span></div>
+          <div class="check-layout">
+            <section class="card check-card" aria-labelledby="form-heading">
+              <div class="card-top"><span class="square-icon lime"><svg class="icon"><use href="#i-link"/></svg></span><span class="mini-label">PEMERIKSAAN URL</span><span class="step-number">01 / 02</span></div>
+              <h2 id="form-heading">Link apa yang kamu terima?</h2><p class="card-description">Tempel alamatnya di sini. Kami membaca teks URL tanpa mengunjungi situsnya.</p>
+              <form id="check-form" novalidate>
+                <label class="field-label" for="url-input">Alamat URL</label>
+                <textarea id="url-input" rows="3" maxlength="4096" inputmode="url" spellcheck="false" autocapitalize="off" autocomplete="off" aria-describedby="input-hint input-error" placeholder="Tempel https://… di sini"></textarea>
+                <div class="field-meta"><span id="input-hint">Satu URL setiap pemeriksaan.</span><button type="button" class="text-button" id="reset-button">Bersihkan <svg class="icon"><use href="#i-close"/></svg></button></div>
+                <p id="input-error" class="input-error" role="alert" hidden></p>
+                <div class="pending-notice" id="pending-notice" hidden><svg class="icon"><use href="#i-alert"/></svg><span>Link belum diperiksa. <strong>Jangan klik dulu.</strong></span></div>
+                <button class="button primary check-button" type="submit" disabled>Periksa link ini <svg class="icon"><use href="#i-arrow"/></svg></button>
+              </form>
+              <div class="privacy-note"><svg class="icon"><use href="#i-lock"/></svg><p>Diproses di browser. URL tidak dikirim atau disimpan oleh aplikasi.</p></div>
+            </section>
+            <aside class="insight-card">
+              <div class="insight-top"><span class="mini-label">KEBIASAAN AMAN, MULAI DARI SINI.</span><svg class="icon"><use href="#i-spark"/></svg></div>
+              <div class="shield-scene" aria-hidden="true"><div class="scene-ring ring-one"></div><div class="scene-ring ring-two"></div><span class="scene-at">@</span><span class="scene-shield"><svg class="icon"><use href="#i-shield"/></svg></span><span class="scene-url">https://…</span><span class="scene-dot"></span></div>
+              <h2>Yang terlihat meyakinkan,<br>belum tentu tepercaya.</h2><p>Nama kampus, logo, dan kata “resmi” bisa ditiru. Baca alamat tujuan sampai akhir.</p>
+              <a href="#/panduan" class="insight-link">Pelajari cara membaca URL <svg class="icon"><use href="#i-arrow"/></svg></a>
+            </aside>
+          </div>
+          <div class="try-panel"><div><span class="eyebrow">BELUM PUNYA LINK?</span><h3>Coba sebuah skenario.</h3></div><button class="quick-example" data-example="beasiswa-at"><span class="quick-symbol">@</span><span><strong>Trik tanda @</strong><small>Nama tepercaya, tujuan berbeda</small></span><svg class="icon"><use href="#i-arrow"/></svg></button><button class="quick-example" data-example="domain-unib"><span class="quick-symbol lavender"><svg class="icon"><use href="#i-link"/></svg></span><span><strong>Domain yang mengecoh</strong><small>Periksa akhiran alamatnya</small></span><svg class="icon"><use href="#i-arrow"/></svg></button><a class="all-examples" href="#/contoh">Lihat 24 contoh <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+          <p class="bottom-note"><svg class="icon"><use href="#i-info"/></svg>Hasil adalah petunjuk dari susunan URL, bukan jaminan keamanan sebuah situs.</p>
+        </section>
+
+        <section class="page" id="page-hasil" data-page="hasil" aria-labelledby="heading-hasil" hidden>
+          <div class="page-intro compact"><div><span class="eyebrow">BACA ALASANNYA, PAHAMI TUJUANNYA</span><h1 id="heading-hasil" tabindex="-1">Hasil pemeriksaan.</h1></div><div class="page-actions"><a class="button secondary" href="#/periksa">Edit link</a><button class="button dark" data-action="new-check">Periksa baru <svg class="icon"><use href="#i-arrow"/></svg></button></div></div>
+          <div id="result-empty" class="card empty-state"><span class="square-icon lavender"><svg class="icon"><use href="#i-search"/></svg></span><h2>Belum ada link yang diperiksa.</h2><p>Tempel URL terlebih dahulu untuk melihat indikator dan alasannya.</p><a class="button primary" href="#/periksa">Mulai pemeriksaan <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+          <div id="result-content" class="result-content" hidden>
+            <div class="verdict-banner" id="verdict-banner" data-level="none"><span class="verdict-icon"><svg class="icon"><use id="verdict-symbol" href="#i-alert"/></svg></span><div class="verdict-copy"><span class="mini-label" id="result-tag"></span><h2 id="result-heading"></h2><p id="result-summary"></p></div><div class="finding-counter"><strong id="finding-total">0</strong><span>catatan URL</span></div></div>
+            <div class="result-grid">
+              <section class="card destination-card"><div class="card-label"><svg class="icon"><use href="#i-eye"/></svg>ALAMAT TUJUAN SEBENARNYA</div><p class="hostname-value" id="hostname-value"></p><p class="hostname-context" id="hostname-context"></p><div class="target-divider"></div><dl class="url-details"><div><dt>Protokol</dt><dd id="protocol-value"></dd></div><div><dt>Port</dt><dd id="port-value"></dd></div></dl><div id="demo-notice" class="demo-notice" hidden><span class="dot"></span>Contoh fiktif untuk simulasi</div><p class="detail-note" id="normalization-note" hidden></p><p class="small-scope"><svg class="icon"><use href="#i-lock"/></svg>Bagian pribadi URL disamarkan pada hasil.</p></section>
+              <section class="card reasons-card" aria-labelledby="reason-section-heading"><div class="reasons-top"><h2 id="reason-section-heading">Mengapa perlu waspada?</h2><span class="reason-count" id="reason-count"></span></div><div class="finding-select" id="finding-select" aria-label="Pilih indikator yang ingin dibaca"></div><article class="reason-detail" id="reason-detail" data-severity="info" aria-live="polite"><span class="reason-label" id="reason-label"></span><h3 id="reason-title"></h3><div class="evidence-block"><span>BAGIAN YANG PERLU DILIHAT</span><code id="reason-evidence"></code></div><p id="reason-description"></p></article></section>
+            </div>
+            <div class="action-banner"><span class="square-icon"><svg class="icon"><use href="#i-shield"/></svg></span><div><h3>Langkah berikutnya</h3><p id="action-text"></p></div><a href="#/panduan" class="action-link" aria-label="Buka panduan langkah aman"><svg class="icon"><use href="#i-arrow"/></svg></a></div>
+            <p class="bottom-note"><svg class="icon"><use href="#i-info"/></svg>Isi halaman, pengalihan, dan reputasi situs tidak diperiksa. Tidak ada hasil yang berarti “pasti aman”.</p>
+          </div>
+        </section>
+
+        <section class="page" id="page-contoh" data-page="contoh" aria-labelledby="heading-contoh" hidden>
+          <div class="page-intro compact"><div><span class="eyebrow">LATIH MATA, BUKAN ASAL KLIK</span><h1 id="heading-contoh" tabindex="-1">Kelihatannya mirip. Tujuannya beda.</h1><p>24 skenario fiktif. Pilih “Periksa contoh” untuk membedah indikatornya.</p></div><span class="example-total">24<span>SKENARIO</span></span></div>
+          <div class="example-toolbar"><div class="filter-group" id="example-filters" aria-label="Filter kategori contoh"><button class="filter active" data-filter="all" aria-pressed="true">Semua <span>24</span></button><button class="filter" data-filter="high" aria-pressed="false">Pola mengecoh <span>16</span></button><button class="filter" data-filter="review" aria-pressed="false">Perlu ditinjau <span>6</span></button><button class="filter" data-filter="none" aria-pressed="false">Pembanding <span>2</span></button></div><label class="example-search"><svg class="icon"><use href="#i-search"/></svg><input id="example-search" type="search" placeholder="Cari skenario…" aria-label="Cari skenario atau URL contoh"></label></div>
+          <div class="examples-grid" id="examples-grid"></div>
+          <div class="examples-empty card" id="examples-empty" hidden><h2>Belum ada contoh yang cocok.</h2><p>Coba kata lain atau tampilkan semua kategori.</p><button class="button secondary" data-action="reset-filter">Reset pencarian</button></div>
+          <div class="pagination"><span id="example-range" role="status"></span><div class="pagination-controls"><button class="page-arrow" id="examples-prev" aria-label="Halaman contoh sebelumnya"><svg class="icon"><use href="#i-back"/></svg></button><div id="example-pages" class="page-numbers"></div><button class="page-arrow" id="examples-next" aria-label="Halaman contoh berikutnya"><svg class="icon"><use href="#i-arrow"/></svg></button></div></div>
+          <p class="bottom-note"><svg class="icon"><use href="#i-info"/></svg>Contoh memakai .example atau IP dokumentasi. Tombol hanya membaca URL, tidak membuka alamatnya.</p>
+        </section>
+
+        <section class="page" id="page-panduan" data-page="panduan" aria-labelledby="heading-panduan" hidden>
+          <div class="page-intro"><div><span class="eyebrow">BEKAL SEBELUM MEMBUKA LINK</span><h1 id="heading-panduan" tabindex="-1">Lebih paham. Lebih waspada.</h1><p>Tiga hal sederhana yang bisa kamu lakukan setiap menerima link.</p></div></div>
+          <div class="guide-tabs" aria-label="Pilih materi panduan"><button class="guide-tab active" data-guide="alamat" aria-pressed="true"><span>01</span>Baca alamat</button><button class="guide-tab" data-guide="indikator" aria-pressed="false"><span>02</span>Kenali indikator</button><button class="guide-tab" data-guide="tindakan" aria-pressed="false"><span>03</span>Ambil langkah aman</button></div>
+          <div class="guide-content" data-guide-panel="alamat">
+            <div class="card guide-lesson"><span class="eyebrow">JANGAN BERHENTI PADA NAMA DI DEPAN</span><h2>Hostname menunjukkan<br>alamat yang dituju.</h2><p>Tulisan yang terlihat seperti nama kampus bisa diletakkan sebelum tanda @. Tujuannya tetap hostname sesudah @.</p><div class="lesson-url"><span>https://</span><span class="muted-part">kampus.example</span><mark>@klaim-beasiswa.example</mark><span>/masuk</span></div><div class="lesson-key"><span class="legend-dot red"></span><p><strong>Tujuan: klaim-beasiswa.example</strong><br>Bukan kampus.example yang terlihat di depan.</p></div><button class="button dark" data-example="beasiswa-at">Lihat hasil contoh ini <svg class="icon"><use href="#i-arrow"/></svg></button></div>
+            <div class="guide-aside"><span class="large-step">01<span>/ 03</span></span><h3>Periksa dari struktur,<br>bukan dari kesan.</h3><ul class="check-list"><li><svg class="icon"><use href="#i-check"/></svg><span>Temukan hostname, lalu baca sampai akhir.</span></li><li><svg class="icon"><use href="#i-check"/></svg><span>Perhatikan tanda @ dan akhiran domain yang berbeda.</span></li><li><svg class="icon"><use href="#i-check"/></svg><span>Cocokkan dengan alamat resmi yang kamu dapat secara terpisah.</span></li></ul><button class="text-button" data-guide="indikator">Materi berikutnya <svg class="icon"><use href="#i-arrow"/></svg></button></div>
+          </div>
+          <div class="guide-content" data-guide-panel="indikator" hidden>
+            <div class="card guide-lesson"><span class="eyebrow">WARNA MEMBANTU MEMBACA, BUKAN MEMBERI KEPASTIAN</span><h2>Kenali arti setiap<br>kategori hasil.</h2><div class="category-explainer"><article><span class="category-tag high">Pola mengecoh</span><p>Ada informasi sebelum @ atau nama domain dikenal di dalam hostname lain. <strong>Tunda klik dan verifikasi.</strong></p></article><article><span class="category-tag review">Perlu ditinjau</span><p>Misalnya HTTP, pemendek link, atau alamat IP. <strong>Periksa tujuan dan konteksnya.</strong> Ciri ini juga dapat muncul pada layanan sah.</p></article><article><span class="category-tag none">Belum terverifikasi</span><p>Aturan belum menemukan indikator utama. <strong>Bukan berarti aman.</strong> Situs penipuan juga bisa memakai HTTPS.</p></article></div></div>
+            <div class="guide-aside lavender-panel"><span class="large-step">02<span>/ 03</span></span><h3>Baca alasan,<br>bukan hanya label.</h3><p>Punycode, URL panjang, banyak bagian hostname, dan port khusus ditampilkan sebagai catatan tambahan. Keberadaannya saja tidak membuktikan phishing.</p><a class="button dark" href="#/contoh">Latihan dengan contoh <svg class="icon"><use href="#i-arrow"/></svg></a><button class="text-button" data-guide="tindakan">Materi berikutnya <svg class="icon"><use href="#i-arrow"/></svg></button></div>
+          </div>
+          <div class="guide-content" data-guide-panel="tindakan" hidden>
+            <div class="card guide-lesson"><span class="eyebrow">SAAT PESAN MEMBUATMU TERBURU-BURU</span><h2>Berhenti. Periksa.<br>Konfirmasi.</h2><ol class="action-steps"><li><span>1</span><div><h3>Jangan klik dulu</h3><p>Hadiah, ancaman akun ditutup, atau batas waktu singkat bisa dipakai untuk mendesakmu.</p></div></li><li><span>2</span><div><h3>Verifikasi lewat kanal terpisah</h3><p>Buka aplikasi resmi atau hubungi kontak yang sudah dikenal. Hindari kontak baru yang hanya tercantum dalam pesan itu.</p></div></li><li><span>3</span><div><h3>Jaga data pribadi</h3><p>Jangan kirim password, PIN, atau OTP kepada pengirim pesan.</p></div></li></ol></div>
+            <div class="guide-aside dark-panel"><span class="large-step">03<span>/ 03</span></span><h3>Sudah telanjur<br>memasukkan data?</h3><p>Hentikan interaksi. Buka layanan melalui aplikasi atau alamat resmi, ubah password yang terdampak, dan hubungi dukungan resmi jika akun atau transaksi terlibat.</p><div class="aside-reminder"><svg class="icon"><use href="#i-lock"/></svg><span>Jangan gunakan kembali link dari pesan mencurigakan.</span></div><a class="button primary" href="#/periksa">Kembali ke pemeriksaan <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+          </div>
+        </section>
+
+        <section class="page" id="page-tentang" data-page="tentang" aria-labelledby="heading-tentang" hidden>
+          <div class="page-intro"><div><span class="eyebrow">KLIK AMAN · KELOMPOK 3 PTIK</span><h1 id="heading-tentang" tabindex="-1">Alat kecil untuk kebiasaan yang baik.</h1><p>Prototipe edukasi keamanan digital · Informatika, Universitas Bengkulu.</p></div></div>
+          <div class="about-grid"><section class="card about-main"><span class="square-icon lime"><svg class="icon"><use href="#i-shield"/></svg></span><h2>Membantu membaca link.<br>Mendorong sikap waspada.</h2><p>Klik Aman menandai ciri pada teks URL dan menjelaskan mengapa bagian tersebut perlu diperhatikan. Hasilnya menjadi bahan belajar sebelum memverifikasi sumber dan konteks pesan.</p><div class="process-flow"><span><b>01</b>Input URL</span><svg class="icon"><use href="#i-arrow"/></svg><span><b>02</b>Baca struktur</span><svg class="icon"><use href="#i-arrow"/></svg><span><b>03</b>Jelaskan ciri</span></div><div class="about-foot"><span class="local-status"><span></span>Berjalan di browser</span><span>Versi 3.0</span></div></section><section class="card scope-card"><h2>Pahami batasnya.</h2><div class="scope-row"><span class="square-icon lime"><svg class="icon"><use href="#i-eye"/></svg></span><div><h3>Yang diperiksa</h3><p>Struktur URL: protokol, hostname, informasi pengguna, port, panjang, serta pola tertentu.</p></div></div><div class="scope-row"><span class="square-icon lavender"><svg class="icon"><use href="#i-info"/></svg></span><div><h3>Yang belum diperiksa</h3><p>Isi website, reputasi, pengalihan, umur domain, sertifikat, dan malware.</p></div></div><div class="scope-row"><span class="square-icon soft"><svg class="icon"><use href="#i-lock"/></svg></span><div><h3>Privasi masukan</h3><p>URL tidak dibuka, dikirim, atau disimpan oleh aplikasi. Pemeriksaan memakai aturan JavaScript, bukan model AI.</p></div></div></section></div>
+          <div class="about-note"><svg class="icon"><use href="#i-info"/></svg><p>Ini prototipe untuk pembelajaran, bukan layanan resmi universitas. AI membantu pembuatan; kategori hasil berasal dari aturan yang terbatas dan bukan persentase akurasi.</p><a href="#/panduan">Baca panduan <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+        </section>
+        <noscript><div class="card noscript"><h2>Aktifkan JavaScript</h2><p>Navigasi halaman dan pemeriksaan URL memerlukan JavaScript. URL tidak dikirim ke server.</p></div></noscript>
+      </main>
+    </div>
+  </div>
+  <p id="live-status" class="sr-only" aria-live="polite" aria-atomic="true"></p>
+</body>
+</html>
